@@ -1,0 +1,90 @@
+<section id="contact" class="section">
+  <div class="container p-5">
+    <div class="section-header">
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="section-subtitle">Let's discuss your next project</p>
+    </div>
+    <div class="contact-content">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="contact-details">
+            <h4>Email</h4>
+            <p>Bishwajitsahani17&#64;gmail.com</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div class="contact-details">
+            <h4>Phone</h4>
+            <p>+91 8753947729</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="contact-details">
+            <h4>Location</h4>
+            <p>Open for Relocation</p>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-container">
+        <form
+          [formGroup]="contactForm"
+          (ngSubmit)="onSubmit()"
+          class="contact-form"
+        >
+          <div class="form-row">
+            <div class="form-group">
+              <input
+                type="text"
+                formControlName="fullName"
+                placeholder="Full Name"
+                class="form-input"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="email"
+                formControlName="email"
+                placeholder="Email Address"
+                class="form-input"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              formControlName="subject"
+              placeholder="Subject"
+              class="form-input"
+            />
+          </div>
+          <div class="form-group">
+            <textarea
+              formControlName="message"
+              placeholder="Your Message"
+              rows="5"
+              class="form-input"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="contactForm.invalid || isSubmitting"
+          >
+            <i class="fas fa-handshake" *ngIf="!isSubmitting"></i>
+            <i class="fas fa-spinner fa-spin" *ngIf="isSubmitting"></i>
+            {{ isSubmitting ? "Sending..." : "Reach Out" }}
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

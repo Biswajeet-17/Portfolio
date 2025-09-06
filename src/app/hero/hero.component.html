@@ -1,0 +1,157 @@
+<section id="home" class="hero-section">
+  <div class="hero-bg"></div>
+  <!-- Animated code keywords and logos background -->
+  <div class="animated-keywords-bg">
+    <ng-container *ngFor="let item of animatedKeywords; let i = index">
+      <div
+        class="animated-keyword rain"
+        [ngStyle]="{
+          left: rainStyles[i].left,
+          animationDelay: rainStyles[i].delay,
+          animationDuration: rainStyles[i].duration,
+          transform: rainStyles[i].transform,
+          color: rainStyles[i].color
+        }"
+      >
+        <ng-container *ngIf="item.icon">
+          <i [class]="item.icon"></i>
+        </ng-container>
+      </div>
+    </ng-container>
+  </div>
+  <div class="container">
+    <div class="row align-items-center min-vh-100">
+      <div class="col-lg-6">
+        <div class="hero-content animate-fadeInLeft">
+          <div class="hero-badge">
+            <span>👋 Welcome!</span>
+          </div>
+          <h1 class="hero-name">
+            <span class="gradient-text">Biswajeet Sahani</span>
+          </h1>
+          <h2 class="hero-title">Software Engineer</h2>
+          <p class="hero-description">
+            Turning ideas into reality, one line of code at a time.
+          </p>
+          <p class="hero-typing-text">
+            <span class="typing-text">{{ currentText }}</span>
+            <span class="cursor animate-pulse">|</span>
+          </p>
+          <div class="hero-buttons">
+            <button
+              class="btn btn-outline-primary"
+              (click)="navigateToProjects()"
+            >
+              <i class="fas fa-folder-open me-2"></i>
+              View Projects
+            </button>
+            <button
+              class="btn btn-outline-primary"
+              (click)="navigateToContact()"
+            >
+              <i class="fas fa-envelope me-2"></i>
+              Get In Touch
+            </button>
+          </div>
+          <div class="hero-social-icons">
+            <a
+              href="https://github.com/Biswajeet-17"
+              target="_blank"
+              aria-label="GitHub"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/biswajeet-sahani/"
+              target="_blank"
+              aria-label="LinkedIn"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/biswajeet_sahani/"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="/assets/Biswajeet_Sahani_Resume.pdf"
+              class="download-btn"
+              aria-label="Download Resume"
+            >
+              <i class="fas fa-file-download"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="hero-image-container animate-fadeInRight">
+          <div class="profile-image-wrapper">
+            <img
+              src="assets/images/Biswajeet_profile_img.jpg"
+              alt="Biswajeet Sahani"
+              class="hero-profile-image"
+            />
+            <div class="profile-decoration"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-subtitle">
+        Passionate about creating exceptional digital experiences
+      </p>
+    </div>
+    <div class="about-content">
+      <div class="about-text">
+        <p>
+          I'm Biswajeet Sahani, a dedicated Full Stack Software Engineer with
+          hands-on experience in building and maintaining scalable web
+          applications using <strong>Angular</strong>,
+          <strong>.NET Core</strong>, and <strong>MS SQL</strong>.
+        </p>
+        <p>
+          Over the past year, I've contributed to multiple projects ranging from
+          enterprise systems to feature enhancements in live production
+          environments. My work has improved performance and stability through
+          efficient debugging, clean code practices, and a strong understanding
+          of Agile methodologies.
+        </p>
+        <p>
+          I’ve also explored technologies like Java, Python, and REST APIs to
+          solve real-world problems, including building a face recognition
+          attendance system and an inventory management app. I hold a Master’s
+          in Computer Application and have earned a 4-star Java rating on
+          HackerRank.
+        </p>
+        <p>
+          I’m committed to learning, collaborating, and continuously growing as
+          a developer. I’m open to relocation and eager to contribute to
+          impactful software solutions.
+        </p>
+
+        <div class="stats">
+          <div class="stat-item">
+            <h3>5+</h3>
+            <p>Projects Completed</p>
+          </div>
+          <div class="stat-item">
+            <h3>1+</h3>
+            <p>Years Experience</p>
+          </div>
+          <div class="stat-item">
+            <h3>3+</h3>
+            <p>Happy Clients</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

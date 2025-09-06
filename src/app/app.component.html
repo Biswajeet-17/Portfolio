@@ -1,0 +1,62 @@
+<div class="app-container" [class.dark-mode]="isDarkMode">
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <i class="fa fa-code"></i>
+        <span>Biswajeet Sahani</span>
+      </div>
+
+      <div class="nav-right">
+        <div class="nav-menu" [class.active]="isMenuOpen">
+          <a href="#home" class="nav-link" (click)="scrollToSection('home')"
+            >Home</a
+          >
+          <a href="#about" class="nav-link" (click)="scrollToSection('about')"
+            >About</a
+          >
+          <a
+            href="#projects"
+            class="nav-link"
+            (click)="scrollToSection('projects')"
+            >Projects</a
+          >
+          <a href="#skills" class="nav-link" (click)="scrollToSection('skills')"
+            >Skills</a
+          >
+          <a
+            href="#experience"
+            class="nav-link"
+            (click)="scrollToSection('experience')"
+            >Experience</a
+          >
+          <a href="#contact" class="nav-link" (click)="scrollToSection('contact')"
+            >Contact</a
+          >
+        </div>
+        <div class="nav-actions">
+          <button
+            class="theme-toggle"
+            (click)="toggleTheme()"
+            [title]="isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'"
+          >
+            <i [class]="isDarkMode ? 'fa fa-sun' : 'fa fa-moon'"></i>
+          </button>
+          <button class="mobile-menu-toggle" (click)="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <app-hero></app-hero>
+  <app-projects></app-projects>
+  <app-skills></app-skills>
+  <app-experience></app-experience>
+  <app-education></app-education>
+  <app-contact #contactSection></app-contact>
+  <app-footer></app-footer>
+</div>

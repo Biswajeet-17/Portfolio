@@ -1,0 +1,105 @@
+<section id="projects" class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-subtitle">Some of my recent work</p>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card" *ngFor="let project of projects" (click)="openProjectModal(project)">
+        <div class="project-image">
+          <img [src]="project.imageUrl" [alt]="project.title" />
+          <div class="project-overlay">
+            <div class="project-actions">
+              <a
+                [href]="project.githubUrl"
+                target="_blank"
+                class="project-action"
+                (click)="$event.stopPropagation()"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+              <a
+                [href]="project.liveUrl"
+                target="_blank"
+                class="project-action"
+                (click)="$event.stopPropagation()"
+              >
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">{{ project.title }}</h3>
+          <p class="project-description">{{ project.description }}</p>
+          <div class="project-tech">
+            <span class="tech-tag" *ngFor="let tech of project.techStack">{{
+              tech
+            }}</span>
+          </div>
+          <div class="project-click-hint">
+            <i class="fas fa-info-circle"></i>
+            <span>Click for details</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Modal -->
+  <div class="modal-overlay" *ngIf="showModal" (click)="closeProjectModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+        <h3 class="modal-title">{{ selectedProject?.title }}</h3>
+        <button class="modal-close" (click)="closeProjectModal()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      
+      <div class="modal-body">
+        <div class="modal-image">
+          <img [src]="selectedProject?.imageUrl" [alt]="selectedProject?.title" />
+        </div>
+        
+        <div class="modal-details">
+          <div class="modal-description">
+            <h4>Project Overview</h4>
+            <p>{{ selectedProject?.detailedDescription }}</p>
+          </div>
+          
+          <div class="modal-features" *ngIf="selectedProject?.features">
+            <h4>Key Features</h4>
+            <ul>
+              <li *ngFor="let feature of selectedProject?.features">{{ feature }}</li>
+            </ul>
+          </div>
+          
+          <div class="modal-challenges" *ngIf="selectedProject?.challenges">
+            <h4>Technical Challenges</h4>
+            <ul>
+              <li *ngFor="let challenge of selectedProject?.challenges">{{ challenge }}</li>
+            </ul>
+          </div>
+          
+          <div class="modal-tech">
+            <h4>Technologies Used</h4>
+            <div class="tech-tags">
+              <span class="tech-tag" *ngFor="let tech of selectedProject?.techStack">{{ tech }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="modal-footer">
+        <a [href]="selectedProject?.githubUrl" target="_blank" class="modal-btn github-btn">
+          <i class="fab fa-github"></i>
+          View Code
+        </a>
+        <a [href]="selectedProject?.liveUrl" target="_blank" class="modal-btn live-btn">
+          <i class="fas fa-external-link-alt"></i>
+          Live Demo
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

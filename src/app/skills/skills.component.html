@@ -1,0 +1,22 @@
+<section id="skills" class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Skills & Technologies</h2>
+      <p class="section-subtitle">Technologies I work with</p>
+    </div>
+    <div class="skills-badge-grid">
+      <div class="skill-category" *ngFor="let category of skillCategories">
+        <h3 class="category-title">
+          <i [class]="category.icon"></i>
+          {{ category.name }}
+        </h3>
+        <div class="skills-badge-list">
+          <span class="skill-badge" *ngFor="let skill of category.skills">
+            <i [class]="skill.iconClass"></i>
+            {{ skill.name }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

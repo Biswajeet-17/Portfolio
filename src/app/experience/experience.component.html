@@ -1,0 +1,24 @@
+<section id="experience" class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Work Experience</h2>
+      <p class="section-subtitle">My professional journey</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item" *ngFor="let exp of experiences">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <h3 class="timeline-title">{{ exp.position }}</h3>
+            <span class="timeline-company">{{ exp.company }}</span>
+            <span class="timeline-date">
+              {{ formatDate(exp.startDate) }} -
+              {{ exp.current ? "Present" : formatDate(exp.endDate) }}
+            </span>
+          </div>
+          <p class="timeline-description">{{ exp.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
