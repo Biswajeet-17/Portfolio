@@ -27,9 +27,20 @@ export class AppComponent implements OnInit {
 
   isDarkMode = false;
   isMenuOpen = false;
+  showScrollButton = false;
 
   ngOnInit(): void {
     this.initTheme();
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    // Show button when scrolled past the hero section (approximately 100vh)
+    const scrollPosition = window.pageYOffset;
+    const windowHeight = window.innerHeight;
+
+    // Show button when scrolled more than 100vh (hero section height)
+    this.showScrollButton = scrollPosition > windowHeight;
   }
 
   private initTheme(): void {
@@ -62,6 +73,10 @@ export class AppComponent implements OnInit {
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
     this.isMenuOpen = false;
+  }
+
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
 

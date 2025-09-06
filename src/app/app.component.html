@@ -3,7 +3,8 @@
   <nav class="navbar">
     <div class="nav-container">
       <div class="nav-brand">
-        <i class="fa fa-code"></i>
+        <!-- <i class="fa fa-code"></i> -->
+        <img src="assets/images/BiswajeetSahani_nav.png" alt="" height="60px" />
         <span>Biswajeet Sahani</span>
       </div>
 
@@ -30,7 +31,10 @@
             (click)="scrollToSection('experience')"
             >Experience</a
           >
-          <a href="#contact" class="nav-link" (click)="scrollToSection('contact')"
+          <a
+            href="#contact"
+            class="nav-link"
+            (click)="scrollToSection('contact')"
             >Contact</a
           >
         </div>
@@ -38,7 +42,9 @@
           <button
             class="theme-toggle"
             (click)="toggleTheme()"
-            [title]="isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'"
+            [title]="
+              isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'
+            "
           >
             <i [class]="isDarkMode ? 'fa fa-sun' : 'fa fa-moon'"></i>
           </button>
@@ -59,4 +65,14 @@
   <app-education></app-education>
   <app-contact #contactSection></app-contact>
   <app-footer></app-footer>
+
+  <!-- Scroll to Top Button -->
+  <button
+    class="scroll-to-top"
+    [class.visible]="showScrollButton"
+    (click)="scrollToTop()"
+    [title]="'Scroll to top'"
+  >
+    <i class="fa fa-arrow-up"></i>
+  </button>
 </div>
